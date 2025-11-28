@@ -179,7 +179,10 @@ public class TodolistApp {
         if (number.equals("x") || number.equals("X")) {
             // batal
         } else {
-            removeTodoList(Integer.parseInt(number));
+            boolean success = removeTodoList(Integer.valueOf(number));
+            if (!success) {
+                System.out.println("Gagal menghapus todo no " + number);
+            }
         }
     }
 }
